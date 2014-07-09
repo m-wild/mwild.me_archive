@@ -1,4 +1,3 @@
-mwild.me
-========
+#mwild.me
 
-My personal website
+My personal website. Hosted at (mwild.me)[http://mwild.me/].
