@@ -4,14 +4,8 @@ title: Hello World!
 date: 2014-07-09 22:00:00
 ---
 
-I did some cool stuff on the internet it was cool.
+Finally decided to move all the .txt notes on my computer onto the internet!
 
-Then i did some other stuff NOT on the internet. It was less cool.
+This blog is made using [jekyll](http://jekyllrb.com/) and hosted on [Github Pages](https://pages.github.com/).
 
-This is a blog post.
-
-    int main() {
-        printf("Hello world!");
-
-        return 0;
-    }
+Style is based off the default jekyll theme with custom css (colors/layout etc..) by me.
