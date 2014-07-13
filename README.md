@@ -1,3 +1,3 @@
-#mwild.me
+#blog.mwild.me
 
-My personal website. Hosted at [mwild.me](http://mwild.me/).
+My blog. Hosted at [blog.mwild.me](http://blog.mwild.me/).
