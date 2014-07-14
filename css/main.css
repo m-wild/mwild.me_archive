@@ -181,7 +181,7 @@ a:hover   { color: #5b6786; text-decoration: underline; }
   border-radius: 3px;
   font-family: Inconsolata, monospace;
   font-size: 13px;
-  overflow:scroll;
+  overflow: auto;
   margin-bottom: 10px;
   margin-top: 10px;
 }
