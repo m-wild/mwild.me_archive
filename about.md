@@ -14,4 +14,8 @@ You can find some of my work at [github.com/tehmantra](http://github.com/tehmant
 
 And my band at [massesnz.com](http://massesnz.com/).
 
+##Contact me
+
 I'm currently looking for work and can be contacted at [michael@mwild.me](mailto:michael@mwild.me).
+
+[nz.linkedin.com/in/mwildmannz/](http://nz.linkedin.com/in/mwildmannz/)
