@@ -8,5 +8,5 @@ github_username:  tehmantra
 disqus_shortname: mwild
 
 # Build settings
-markdown: kramdown
+markdown: pygments
 permalink: /:year/:month/:day/:title.html
