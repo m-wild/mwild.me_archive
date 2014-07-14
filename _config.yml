@@ -5,6 +5,7 @@ description: "Programmer, web developer, drummer. Auckland NZ"
 baseurl: ""
 url: "http://mwild.me"
 github_username:  tehmantra
+disqus_shortname: mwild
 
 # Build settings
 markdown: kramdown
