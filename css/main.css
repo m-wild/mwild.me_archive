@@ -1,5 +1,5 @@
 /* Base -----------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro);
 
 * { margin: 0; padding: 0; }
 
@@ -167,16 +167,23 @@ a:hover   { color: #5b6786; text-decoration: underline; }
 .post-content ul,
 .post-content ol { padding-left: 20px; }
 
+.post-content li {
+  padding-bottom: 2px;
+}
+
 .post pre,
 .post code {
   border: 1px solid #d5d5e9;
-  background-color: #efeffa;
+  background-color: #fafafd;
   padding: 8px 12px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-size: 15px;
+  font-family: Source Code Pro, monospace;
+  font-size: 13px;
   overflow:scroll;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .post code { padding: 1px 5px; }
