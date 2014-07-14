@@ -10,7 +10,7 @@ I have worked for [The University of Auckland](http://auckland.ac.nz/) developin
 
 I was a national finalist in the [Microsoft Imagine Cup](https://www.imaginecup.com/) 2014 for my idea of a website where students can work together on past tests and exams. In my experience, students worked better when no answers were given to them. They were forced to work together to find the right answers, and this website was designed to foster that collaboration. A prototype version is live at [examinate.co.nz](http://examinate.co.nz/).
 
-You can find some of my work at [github.com/tehmantra](http://github.com/tehmantra/).
+You can find some of my work at [github.com/tehmantra](http://github.com/tehmantra) and [gist.github.com/tehmantra](https://gist.github.com/tehmantra).
 
 And my band at [massesnz.com](http://massesnz.com/).
 
