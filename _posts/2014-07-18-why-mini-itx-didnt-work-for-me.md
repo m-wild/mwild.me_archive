@@ -1,0 +1,18 @@
+---
+layout: post
+title: Why mini ITX didn't work for me
+---
+
+I've always disliked big computers, and earlier this year I decided to try and build the smallest mini ITX gaming PC possible.
+
+The case I got was the Silverstone SG05 which could only fit an SFX power supply (the best one was only 450watts), one HDD and a slim 5.25" drive. I also wanted to liquid cool it, so I had to mod the case (removing the HDD cage!!) but I converted the 5.25" bay to fit 2x 2.5" SSD's. Then got a Synology DS213j NAS to store all my main data (music etc) and just ran the OS and games of the 2 SSD's.
+
+<a href="https://dl.dropboxusercontent.com/u/942003/img/pc-2014-07.jpg" target="_blank"><img src="https://dl.dropboxusercontent.com/u/942003/img/pc-2014-07.jpg" style="width:800px"></a>
+
+After using this setup for a couple of months, I'm going back to mATX.
+
+Dont get me wrong, I think it's a sweet PC. But I think I had over-valued having a small PC. I'd traded unity for small size. A mATX PC is large enough that you can keep everything in one unit -- which actually makes the whole setup smaller overall. While having a NAS was nice and allowed for easy synchronization with my laptop, and allowed me to move everything off the public cloud (dropbox, google drive) -- it added an extra ethernet and power cable, and then one more eth and power for the switch to hook them all up.
+
+Then I wanted to upgrade my audio and got an _external_ DAC, which added 2 more cables and another box.
+
+So I had ended up with an unmanageable amount of cables, 2 boxes, and a system which was virtually impossible to upgrade.
