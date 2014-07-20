@@ -171,6 +171,13 @@ a:hover   { color: #5b6786; text-decoration: underline; }
   padding-bottom: 2px;
 }
 
+.post-content a img {
+  transition: all 0.2s ease-in-out;
+}
+.post-content a img:hover {
+  box-shadow: 0 0 10px #8494c1;
+}
+
 .post pre,
 .post code {
   border: 1px solid #d5d5e9;
