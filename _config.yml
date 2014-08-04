@@ -10,6 +10,6 @@ disqus_shortname: mwild
 # Build settings
 markdown: redcarpet
 redcarpet:
-  extensions: [ smart, tables, no_intra_emphasis ]
+  extensions: [ smart, tables, no_intra_emphasis, hard_wrap ]
 highlighter: pygments
 permalink: /:year/:month/:day/:title.html
