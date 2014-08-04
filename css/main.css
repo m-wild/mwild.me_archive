@@ -1,12 +1,13 @@
 /* Base -----------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans|Inconsolata:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Inconsolata:400,700);
 
 * { margin: 0; padding: 0; }
 
 html, body { height: 100%; }
 
 body {
-  font-family: Open Sans, sans-serif;
+  color: #444;
+  font-family: Lato, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -168,7 +169,7 @@ a:hover   { color: #5b6786; text-decoration: underline; }
 .post-content ol { padding-left: 20px; }
 
 .post-content li {
-  padding-bottom: 2px;
+  padding-bottom: 10px;
 }
 
 .post-content a img {
@@ -216,6 +217,23 @@ a:hover   { color: #5b6786; text-decoration: underline; }
 
 .post pre.terminal code { background-color: #333; }
 
+/* tables -------------------------------------------------*/
+
+table {
+  min-width: 200px;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+table td,
+table th {
+  padding: 2px 8px;
+}
+table thead {
+  font-weight: bold;
+  border-bottom: 2px #ddd solid;
+}
+
+ 
 /* Syntax highlighting styles -------------------------------*/
 
 .highlight  { background: #ffffff; }
