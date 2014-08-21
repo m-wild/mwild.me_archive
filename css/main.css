@@ -1,5 +1,5 @@
 /* Base -----------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Inconsolata:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400|Inconsolata:400,700);
 
 * { margin: 0; padding: 0; }
 
@@ -9,16 +9,18 @@ body {
   color: #444;
   font-family: Lato, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   background-color: #fbfbfb;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
 a         { color: #8494c1; text-decoration: none; }
 a:visited { color: #ae84c1; }
 a:hover   { color: #5b6786; text-decoration: underline; }
+
+em { color: #a16a94; }
 
 /* Utility */
 .wrap:before,
