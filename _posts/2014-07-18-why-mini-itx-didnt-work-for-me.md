@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why mini ITX didn't work for me
+excerpt: I've always disliked big computers, and earlier this year I decided to try and build the smallest mini ITX gaming PC possible.
 ---
 
 I've always disliked big computers, and earlier this year I decided to try and build the smallest mini ITX gaming PC possible.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ubuntu Server setup
+excerpt: basic ubuntu server ssh setup
 ---
 
 ##Basic Ubuntu server setup

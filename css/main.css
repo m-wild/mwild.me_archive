@@ -170,9 +170,9 @@ em { color: #a16a94; }
 .post-content ul,
 .post-content ol { padding-left: 20px; }
 
-.post-content li {
+/*.post-content li {
   padding-bottom: 10px;
-}
+}*/
 
 .post-content a img {
   transition: all 0.2s ease-in-out;
