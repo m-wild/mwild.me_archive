@@ -6,14 +6,15 @@ excerpt: A list of game programming ideas from some reddit user.
 
 A list of game programming ideas from some reddit user.
 
-```
-This is a list of projects roughly ordered by difficulty. I'd recommend starting at
+>This is a list of projects roughly ordered by difficulty. I'd recommend starting at
 the top of the list and moving down, filling in anything you haven't done already.
 Once you're to the bottom I'd consider you pretty skilled. My main thing is game
 programming, so that's going to show through a lot.
 
 - Text-based adventure [Key topics: basic i/o, basic code structure]
+    - [github.com/tehmantra/Dungeonman](https://github.com/tehmantra/Dungeonman)
 - Conway's Game of Life [Key topics: cellular automata, arrays, mouse input, simple rendering]
+    - [github.com/tehmantra/conways-game-of-life](https://github.com/tehmantra/conways-game-of-life)
 - Tetris [Key topics: basic collisions, keyboard input, slightly less simple rendering]
 - Snake [Key topics: linked lists]
 - Asteroids [Key topics: trigonometry, slightly less basic collisions]
@@ -34,4 +35,3 @@ programming, so that's going to show through a lot.
 - Simple Lua/Python-driven game engine [Key topics: virtual machines, basic engine creation]
 - Raycasting renderer [Key topics: pseudo-3D rendering]
 - FPS [Key topics: 3D rendering, Basic 3D collisions]
-```
