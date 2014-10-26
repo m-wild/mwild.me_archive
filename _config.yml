@@ -11,4 +11,4 @@ markdown: redcarpet
 redcarpet:
   extensions: [ smart, tables, no_intra_emphasis, hard_wrap, fenced_code_blocks, disable_indented_code_blocks ]
 highlighter: pygments
-permalink: /:title.html
+permalink: /:categories/:title/
