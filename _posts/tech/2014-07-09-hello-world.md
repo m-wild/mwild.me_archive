@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello World!
+category: tech
 excerpt: Finally decided to move all the .txt notes on my computer onto the internet!
 ---
 

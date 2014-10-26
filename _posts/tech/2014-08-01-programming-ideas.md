@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Programming ideas
+category: tech
 excerpt: A list of game programming ideas from some reddit user.
 ---
 
