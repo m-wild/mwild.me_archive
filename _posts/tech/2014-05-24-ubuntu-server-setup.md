@@ -1,23 +1,12 @@
 ---
 layout: post
-title: Ubuntu Server setup
+title: ssh config
 category: tech
 excerpt: basic ubuntu server ssh setup
 ---
 
-##Basic Ubuntu server setup
+##Basic Ubuntu server ssh setup
 
-###1. Install Ubuntu Server
-- Use mostly default options
-- Make sure to install OpenSSH server
-- Update and upgrade software
-
-      ```bash
-$ sudo aptitude update
-$ sudo aptitude upgrade
-      ```
-
-###2. SSH Configuration
 How to set up keys from Windows with PuTTY
 
 1. Generate key pair in PuTTYgen (on client) -- the passphrase you use here will replace password at login
@@ -25,11 +14,11 @@ How to set up keys from Windows with PuTTY
 3. Setup authroized keys on the server
 
     ```bash
-$ mkdir ~/.ssh
-$ chmod 700 ~/.ssh
-$ touch ~/.ssh/authorized_keys
-$ chmod 600 ~/.ssh/authorized_keys
-$ vi ~/.ssh/authorized_keys
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+vi ~/.ssh/authorized_keys
     ```
 4. open the PUBLIC key on the client and copy it to the server (authorized_keys file) -- _The file should be formatted (exactly, with no CR or LF chars)_
 
@@ -45,12 +34,12 @@ Connection > SSH > Auth > Private key file for...
 7. disable password authentication (on ssh server)
 
 	```bash
-$ sudo vi /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
     ```
 locate the line `#PasswordAuthentication yes` <br>
 and replace it with	`PasswordAuthentication no` <br>
 
     ```bash
-$ sudo restart ssh
+sudo restart ssh
     ```
 8. Verify that you _CAN'T_ log in WITHOUT the key.
