@@ -4,7 +4,7 @@ title: SSH Config
 category: tech
 ---
 
-How to set up keys from Windows with PuTTY
+#### How to set up keys from Windows with PuTTY
 
 1. Generate key pair in PuTTYgen (on client) -- the passphrase you use here will replace password at login
 2. Save both keys to a secure location (on the client)
@@ -39,3 +39,26 @@ locate the line `#PasswordAuthentication yes` and replace it with	`PasswordAuthe
 sudo service ssh restart
     ```
 8. Verify that you __CAN'T__ log in WITHOUT the key.
+
+
+
+#### PuTTY oddities
+
+Certain things may not work well with PuTTY by default (vi arrow keys, crtl-left/right between words, color output). Ensure the following options are set:
+
+```
+Terminal > Features > 
+	[ ] Disable application cursor keys mode
+	[x] Disable application keypad mode
+	
+Connection > Data > Terminal details
+	Terminal-type string = xterm-256color
+```
+
+Setting $TERM may also help
+
+```bash
+vi ~/.bashrc
+## add the following
+TERM=putty-256color
+```
