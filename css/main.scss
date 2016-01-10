@@ -1,3 +1,8 @@
+---
+---
+
+
+
 /* Base ----------------------------------------------------- */
 * { margin: 0; padding: 0; }
 
@@ -5,7 +10,7 @@ html, body { height: 100%; }
 
 body {
   color: #737373;
-  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   line-height: 18px;
   background-color: #fbfbfb;
@@ -76,14 +81,7 @@ a:hover   { color: #5b6786; text-decoration: underline; }
 
 .posts li { margin-bottom: 30px; }
 
-.posts .post-link {
-  letter-spacing: -.5px;
-}
-.posts .post-date {
-  display: block;
-  font-size: 15px;
-  color: #818181;
-}
+.posts .post-date { font-size: 0.85em; }
 
 /* Post styles ---------------------------------------------- */
 .post-content { margin: 0 0 30px; }
@@ -96,41 +94,41 @@ h3,
 h4,
 h5,
 h6 {
-    color: #404040;
-    line-height: 36px;
+	color: #404040;
+	line-height: 36px;
 }
 h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
+	margin-bottom: 18px;
+	font-size: 30px;
 }
 h2 {
-    font-size: 24px;
+	font-size: 24px;
 }
 h3 {
-    font-size: 18px;
+	font-size: 18px;
 }
 h4 {
-    font-size: 16px;
+	font-size: 16px;
 }
 h5 {
-    font-size: 14px;
+	font-size: 14px;
 }
 h6 {
-    font-size: 13px;
+	font-size: 13px;
 }
 
 blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
+	padding: 13px 13px 21px 15px;
+	margin-bottom: 18px;
+	font-family:georgia,serif;
+	font-style: italic;
 }
 blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 18px;
+	margin-bottom: 0;
+	font-style: italic;
 }
 
 .post-content ul,
@@ -144,26 +142,26 @@ blockquote p {
 }
 
 code, pre {
-    font-family: Menlo Regular, Consolas, monospace;
+	font-family: "Source Code Pro", monospace;
 }
 code {
-    background-color: #fbfbfb;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+	background-color: #fbfbfb;
+	color: rgba(0, 0, 0, 0.75);
+	padding: 1px 3px;
+	font-size: 12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 12px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+	display: block;
+	padding: 8px;
+	margin: 4px 0px;
+	line-height: 16px;
+	font-size: 12px;
+	border: 1px solid #d9d9d9;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 pre code {
     background-color: #fff;
@@ -182,14 +180,14 @@ table {
 	margin: 10px 0 15px 0;
 	border-collapse: collapse;
 }
-td,th {	
+td,th {
 	border: 1px solid #ddd;
 	padding: 3px 10px;
 }
 th {
-	padding: 5px 10px;	
+	padding: 5px 10px;
 }
- 
+
 /* Syntax highlighting styles ------------------------------- */
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
@@ -255,20 +253,45 @@ th {
 
 /* media queries -------------------------------------------- */
 @media screen and (max-width: 600px) {
-  .wrap {
-    padding: 0 12px;
-  }
+
+	$pad_w: 8px;
+
+	.post-content * {
+		max-width: calc(100vw - #{2 * $pad_w});
+	}
+
+	.wrap {
+		padding: 0 $pad_w;
+	}
+
+	.page-content .wrap {
+		padding: $pad_w;
+
+		border-left: 0;
+		border-right: 0;
+		box-shadow: 0px 0px 0px;
+	}
+
+
+
   .site-header {
     min-height: 30px;
   }
   .site-header .wrap {
     padding-top: 0px;
   }
+
+
+	.jqwrap-table {
+		display: block;
+		overflow: scroll;
+	}
+
 }
 
 
-@media print {
-	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+@media only print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6,p {
 		color: black;
 	}
 	table, pre {

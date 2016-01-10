@@ -1,11 +1,8 @@
 ---
 layout: post
-title: ssh config
+title: SSH Config
 category: tech
-excerpt: basic ubuntu server ssh setup
 ---
-
-##Basic Ubuntu server ssh setup
 
 How to set up keys from Windows with PuTTY
 
@@ -36,10 +33,9 @@ Connection > SSH > Auth > Private key file for...
 	```bash
 sudo vi /etc/ssh/sshd_config
     ```
-locate the line `#PasswordAuthentication yes` <br>
-and replace it with	`PasswordAuthentication no` <br>
+locate the line `#PasswordAuthentication yes` and replace it with	`PasswordAuthentication no`
 
     ```bash
-sudo restart ssh
+sudo service ssh restart
     ```
-8. Verify that you _CAN'T_ log in WITHOUT the key.
+8. Verify that you __CAN'T__ log in WITHOUT the key.
