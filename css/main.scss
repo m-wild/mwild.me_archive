@@ -135,7 +135,7 @@ blockquote p {
 .post-content ol { padding-left: 20px; }
 
 .post-content a img {
-  transition: all 0.2s ease-in-out;
+  /*transition: all 0.2s ease-in-out;*/
   width: 800px;
 }
 .post-content a img:hover {
@@ -254,7 +254,7 @@ th {
 .highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */
 
 /* media queries -------------------------------------------- */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 	$pad_w: 8px;
 
