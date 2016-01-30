@@ -136,10 +136,12 @@ blockquote p {
 
 .post-content a img {
   transition: all 0.2s ease-in-out;
+  width: 800px;
 }
 .post-content a img:hover {
   box-shadow: 0 0 10px #8494c1;
 }
+
 
 code, pre {
 	font-family: "Source Code Pro", monospace;
