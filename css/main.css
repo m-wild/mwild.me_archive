@@ -1,0 +1,35 @@
+/** Base ------------------------------------------------------- */
+html {
+    font-family: Montserrat, Arial, sans-serif;
+    background-color: #fbfbfb;
+    font-size: small;
+    color: #333;
+}
+
+a         { color: #8494c1; text-decoration: none; }
+a:visited { color: #ae84c1; }
+a:hover   { color: #5b6786; text-decoration: underline; }
+
+/** Main ------------------------------------------------------- */
+.main-content {
+    margin: 0 20px;
+    padding: 0 20px 20px 20px;
+    max-width: 800px;
+}
+
+@media screen and (max-width: 800px) {
+    .main-content {
+        margin: 0;
+        padding: 0;
+    }
+} 
+
+/** Nav -------------------------------------------------------- */
+nav {
+    font-family: Consolas, monospace;
+}
+
+/** Alignment -------------------------------------------------- */
+.text-center {
+    text-align: center;
+}
