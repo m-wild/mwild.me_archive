@@ -1,15 +1,7 @@
-# Site settings
 title: Michael Wildman
 email: michael@mwild.me
 description: "Software Engineer, Drummer. Auckland NZ"
 baseurl: ""
 url: "http://blog.mwild.me"
 github_username:  tehmantra
-
-# Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: [ smart, tables, no_intra_emphasis, hard_wrap, fenced_code_blocks, disable_indented_code_blocks ]
-highlighter: pygments
-#permalink: /:categories/:title/
 permalink: /:title/

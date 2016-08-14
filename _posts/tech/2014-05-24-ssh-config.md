@@ -10,34 +10,39 @@ category: tech
 2. Save both keys to a secure location (on the client)
 3. Setup authroized keys on the server
 
-    ```bash
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-vi ~/.ssh/authorized_keys
-    ```
+   ```sh
+   mkdir ~/.ssh
+   chmod 700 ~/.ssh
+   touch ~/.ssh/authorized_keys
+   chmod 600 ~/.ssh/authorized_keys
+   vi ~/.ssh/authorized_keys
+   ```
+
 4. open the PUBLIC key on the client and copy it to the server (authorized_keys file) -- _The file should be formatted (exactly, with no CR or LF chars)_
 
-    ```
-ssh-rsa the_key_string the_key_comment
-    ```
+   ```
+   ssh-rsa the_key_string the_key_comment
+   ```
 5. add the private key to PuTTY (in PuTTY config)
 
-    ```
-Connection > SSH > Auth > Private key file for...
-    ```
+   ```
+   Connection > SSH > Auth > Private key file for...
+   ```
 6. Verify the server is accepting the key by logging in with PuTTY
 7. disable password authentication (on ssh server)
 
-	```bash
-sudo vi /etc/ssh/sshd_config
-    ```
-locate the line `#PasswordAuthentication yes` and replace it with	`PasswordAuthentication no`
+   ```sh
+   sudo vi /etc/ssh/sshd_config
 
-    ```bash
-sudo service ssh restart
-    ```
+   # locate the line
+   PasswordAuthentication yes
+   # and replace it with
+   PasswordAuthentication no
+
+   # remember to restart sshd
+   sudo service ssh restart
+   ```
+
 8. Verify that you __CAN'T__ log in WITHOUT the key.
 
 
@@ -52,13 +57,5 @@ Terminal > Features >
 	[x] Disable application keypad mode
 	
 Connection > Data > Terminal details
-	Terminal-type string = xterm-256color
-```
-
-Setting $TERM may also help
-
-```bash
-vi ~/.bashrc
-## add the following
-TERM=putty-256color
+	Terminal-type string = putty-256color
 ```
