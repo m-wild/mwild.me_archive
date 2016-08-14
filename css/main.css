@@ -28,8 +28,3 @@ a:hover   { color: #5b6786; text-decoration: underline; }
 nav {
     font-family: Consolas, monospace;
 }
-
-/** Alignment -------------------------------------------------- */
-.text-center {
-    text-align: center;
-}
