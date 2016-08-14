@@ -1,7 +1,4 @@
-title: Michael Wildman
-email: michael@mwild.me
-description: "Software Engineer, Drummer. Auckland NZ"
+title: mwild
 baseurl: "/blog"
 url: "http://mwild.me"
-github_username:  tehmantra
 permalink: /:year/:title/
