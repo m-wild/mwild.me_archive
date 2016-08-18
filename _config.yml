@@ -2,3 +2,4 @@ title: mwild
 baseurl: "/blog"
 url: "http://mwild.me"
 permalink: /:year/:title/
+images: "https://static.mwild.me/images"
