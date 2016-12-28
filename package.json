@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
+    "less": "*",
     "metalsmith": "*",
-    "metalsmith-layouts": "*",
-    "metalsmith-less": "*"
+    "metalsmith-layouts": "*"
   }
 }
