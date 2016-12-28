@@ -1,0 +1,10 @@
+{
+  "name": "tehmantra.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "metalsmith": "*",
+    "metalsmith-layouts": "*",
+    "metalsmith-less": "*"
+  }
+}

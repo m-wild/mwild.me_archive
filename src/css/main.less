@@ -1,14 +1,21 @@
+@dark-gray: #333;
+@light-gray: #fbfbfb;
+@blue: #8494c1;
+@dark-blue: #5b6786;
+@purple: #ae84c1;
+
+
 /** Base ------------------------------------------------------- */
 html {
   font-family: Montserrat, sans-serif;
-  background-color: #fbfbfb;
+  background-color: @light-gray;
   font-size: small;
-  color: #333;
+  color: @dark-gray;
 }
 
-a         { color: #8494c1; text-decoration: none; }
-a:visited { color: #ae84c1; }
-a:hover   { color: #5b6786; text-decoration: underline; }
+a         { color: @blue; text-decoration: none; }
+a:visited { color: @purple; }
+a:hover   { color: @dark-blue; text-decoration: underline; }
 
 /** Main ------------------------------------------------------- */
 .main-content {
