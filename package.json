@@ -5,6 +5,8 @@
   "dependencies": {
     "less": "*",
     "metalsmith": "*",
-    "metalsmith-layouts": "*"
+    "metalsmith-layouts": "*",
+    "metalsmith-serve": "*",
+    "metalsmith-watch": "*"
   }
 }
