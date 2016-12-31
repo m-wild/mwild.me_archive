@@ -1,7 +1,7 @@
 const Metalsmith = require('metalsmith');
 const layouts    = require('metalsmith-layouts');
+const express    = require('metalsmith-express');
 const watch      = require('metalsmith-watch');
-const serve      = require('metalsmith-serve');
 const less       = require('./lib/metalsmith-less');
 
 Metalsmith(__dirname)
@@ -9,8 +9,8 @@ Metalsmith(__dirname)
     .destination('./build')
     .use(less())
     .use(layouts({engine: 'handlebars'}))
-    .use(serve())
-    .use(watch())
+    .use(express())
+    .use(watch({livereload:true}))
     .build(function(err) {
         if (err) throw err;
     });
