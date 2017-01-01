@@ -1,9 +1,3 @@
-@dark-gray: #333;
-@light-gray: #fbfbfb;
-@blue: #8494c1;
-@dark-blue: #5b6786;
-@purple: #ae84c1;
-
 @base00: #2b303b;
 @base01: #343d46;
 @base02: #4f5b66;
@@ -21,20 +15,22 @@
 @base0E: #b48ead;
 @base0F: #ab7967;
 
-
-/** Base ------------------------------------------------------- */
 html {
-  font-family: Montserrat, sans-serif;
-  background-color: @light-gray;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  background-color: @base00;
   font-size: small;
-  color: @dark-gray;
+  color: @base05;
 }
 
-a         { color: @blue; text-decoration: none; }
-a:visited { color: @purple; }
-a:hover   { color: @dark-blue; text-decoration: underline; }
+::selection {
+  background: @base02;
+  color: @base05;
+}
 
-/** Main ------------------------------------------------------- */
+a         { color: @base0D; text-decoration: none; }
+a:visited { color: @base0E; }
+a:hover   { color: @base04; text-decoration: underline; }
+
 .main-content {
   margin: 0 20px;
   padding: 0 20px 20px 20px;
@@ -46,9 +42,4 @@ a:hover   { color: @dark-blue; text-decoration: underline; }
     margin: 0;
     padding: 0;
   }
-} 
-
-/** Nav -------------------------------------------------------- */
-nav {
-  font-family: Consolas, monospace;
 }
