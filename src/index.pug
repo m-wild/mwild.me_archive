@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+extends templates/default.pug
 
-	<title>mwild</title>
+block no-nav
 
-	<link rel="stylesheet" type="text/css" href="./css/index.css">
-	<style>
-	
-	</style>
-</head>
-<body>
-	<div class="main-content main-content-no-nav">
+block body
+	h1.heading-no-nav Michael Wildman
 
-		<h1>Michael Wildman</h1>	
-		<ul>
-			<li><a href="./blog/">Blog</a></li>
-			<li><a href="./about/">About Me</a></li>
-			<li><a href="./webgl-tutorials/">WebGL Tutorials</a></li>
-		</ul>
+	- 
+		var contents = {
+			'./blog/': 'Blog',
+			'./about/': 'About Me',
+			'./webgl-tutorials/': 'WebGL Tutorials'
+		};
 
-	</div>
-</body>
-</html>
+	ul
+		each text, link in contents
+			li
+				a(href=link)= text
