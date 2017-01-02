@@ -7,7 +7,6 @@
     "less-plugin-autoprefix": "*",
     "metalsmith": "*",
     "metalsmith-express": "*",
-    "metalsmith-layouts": "*",
     "metalsmith-pug": "*",
     "metalsmith-watch": "*"
   }
