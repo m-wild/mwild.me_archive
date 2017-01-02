@@ -1,4 +1,6 @@
-/_site
+_site/
 .DS_Store
 *.lock
-/.sass-cache
+.sass-cache/
+build/
+node_modules/
