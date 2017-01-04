@@ -7,7 +7,7 @@ block content
   div.post
     header.post-header
       p.meta
-        strong= date + (author ? ' • ' + author : '')
+        strong= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'}) + (author ? ' • ' + author : '')
       h1= title
   
     article.post-content
