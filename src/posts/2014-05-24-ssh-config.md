@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post.pug
 title: SSH Config
 category: tech
 ---
