@@ -15,8 +15,7 @@ Metalsmith(__dirname)
     site: {
       title: 'mwild',
       baseurl: '/blog',
-      url: 'http://mwild.me',
-      images: 'https://static.mwild.me/images'
+      url: 'http://mwild.me'
     }
   })
   .source("./src")
