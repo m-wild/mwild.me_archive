@@ -7,10 +7,7 @@ excerpt: A list of game programming ideas from some reddit user.
 
 A list of game programming ideas from some reddit user.
 
->This is a list of projects roughly ordered by difficulty. I'd recommend starting at
-the top of the list and moving down, filling in anything you haven't done already.
-Once you're to the bottom I'd consider you pretty skilled. My main thing is game
-programming, so that's going to show through a lot.
+> This is a list of projects roughly ordered by difficulty. I'd recommend starting at the top of the list and moving down, filling in anything you haven't done already. Once you're to the bottom I'd consider you pretty skilled. My main thing is game programming, so that's going to show through a lot.
 
 - Text-based adventure [Key topics: basic i/o, basic code structure]
     - [github.com/tehmantra/Dungeonman](https://github.com/tehmantra/Dungeonman)
