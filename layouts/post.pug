@@ -1,0 +1,11 @@
+extends ./default.pug
+
+block content
+  div.post
+    header.post-header
+      p.meta
+        strong= date + (author ? ' • ' + author : '')
+      h1= title
+  
+    article.post-content
+      != contents
