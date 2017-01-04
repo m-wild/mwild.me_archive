@@ -1,17 +1,5 @@
 ---
-layout: default
+layout: index.pug
 ---
 
-<div class="home">
-	<ul class="posts">
-		{% for post in site.posts %}
-			<li>
-				<div class="post-date"><strong>{{ post.date | date: "%b %-d, %Y" }}</strong></div>
-				<span><h2 style="display: inline"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2></span>
-
-
-				<div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-			</li>
-		{% endfor %}
-	</ul>
-</div>
+<!-- this file only exists to create an 'index.html' with the 'index' layout -->
