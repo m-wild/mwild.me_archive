@@ -2,6 +2,7 @@
 layout: post.pug
 title: SSH Config
 category: tech
+comments: true
 ---
 
 #### How to set up keys from Windows with PuTTY

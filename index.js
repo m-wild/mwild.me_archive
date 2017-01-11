@@ -18,7 +18,7 @@ Metalsmith(__dirname)
     site: {
       title: 'mwild',
       baseurl: '/blog',
-      url: 'http://mwild.me'
+      url: 'https://mwild.me'
     }
   })
   .source("./src")
@@ -44,7 +44,7 @@ Metalsmith(__dirname)
     engine: 'pug'
   }))
   .use(disqus({
-    siteurl: 'mwild.me/blog/',
+    siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
   }))
   .use(msIf(argv.watch, 
