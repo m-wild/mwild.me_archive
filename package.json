@@ -7,12 +7,14 @@
     "metalsmith-collections": "latest",
     "metalsmith-date-in-filename": "latest",
     "metalsmith-express": "latest",
+    "metalsmith-if": "latest",
     "metalsmith-layouts": "latest",
     "metalsmith-less": "git+https://git@github.com/tehmantra/metalsmith-less.git",
     "metalsmith-markdown": "latest",
     "metalsmith-metallic": "latest",
     "metalsmith-permalinks": "latest",
     "metalsmith-watch": "latest",
+    "minimist": "latest",
     "pug": "latest"
   }
 }
