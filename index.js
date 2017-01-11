@@ -1,6 +1,7 @@
 const Metalsmith  = require('metalsmith');
 const collections = require('metalsmith-collections');
 const dates       = require('metalsmith-date-in-filename');
+const disqus      = require('metalsmith-disqus');
 const express     = require('metalsmith-express');
 const msIf        = require('metalsmith-if');
 const layouts     = require('metalsmith-layouts');
@@ -37,11 +38,14 @@ Metalsmith(__dirname)
     smartypants: true
   }))
   .use(permalinks({ // must be after markdown
-    pattern: ':date/:title',
-    date: 'YYYY'
+    pattern: ':title'
   }))
   .use(layouts({
     engine: 'pug'
+  }))
+  .use(disqus({
+    siteurl: 'mwild.me/blog/',
+    shortname: 'mwild'
   }))
   .use(msIf(argv.watch, 
     express()))
