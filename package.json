@@ -5,8 +5,10 @@
   "dependencies": {
     "metalsmith": "*",
     "metalsmith-express": "*",
+    "metalsmith-if": "*",
     "metalsmith-less": "git+https://git@github.com/tehmantra/metalsmith-less.git",
     "metalsmith-pug": "*",
-    "metalsmith-watch": "*"
+    "metalsmith-watch": "*",
+    "minimist": "*"
   }
 }
