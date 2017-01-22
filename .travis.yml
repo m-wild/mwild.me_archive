@@ -15,3 +15,5 @@ env:
   - TARGET_BRANCH: "master"
   - GITHUB_REPO: "tehmantra/tehmantra.github.io"
   - BUILD_OUT_DIR: build
+notifications:
+  email: false
