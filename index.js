@@ -1,5 +1,6 @@
 const Metalsmith = require('metalsmith');
 const express   = require('metalsmith-express');
+const msIf      = require('metalsmith-if');
 const watch     = require('metalsmith-watch');
 const less      = require('metalsmith-less');
 const pug       = require('metalsmith-pug');
