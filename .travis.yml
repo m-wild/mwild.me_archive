@@ -4,7 +4,7 @@ node_js:
 script:
   - mkdir "$BUILD_OUT_DIR"
   - node index.js
-deploy:
+after_success:
   - scritps/deploy-gh-pages.sh
 env:
   global:
