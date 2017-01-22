@@ -5,7 +5,7 @@ script:
   - mkdir "$BUILD_OUT_DIR"
   - node index.js
 after_success:
-  - scritps/deploy-gh-pages.sh
+  - scripts/deploy-gh-pages.sh
 env:
   global:
   - secure: "si4zyXSWtTfEA6oeE6b6rIThHO3iSxC6j+BnR185EP05zg6HZOohkb33gDW0sY7MOCEbPFAf1l6rD+Xt5VJz+XGcivXbWLlEysK2nTPvgQPZIv/2npF3rYCpj6uUjPHC0G81a7ZORic7QItnWtFmlhA2pNKA5sPpVmeCmga/Rec0Ho/YbcxsyW/tR2+rEGQbMkathDrg2n6vFh6erNaCZQiBZhrVSP1jC8lQp3iQqdLAC2A1Ab9FdOGMfWa5815TK/EKitdks+2O+drsCFd+AsGygEc++aCsL0aPmuB14Tl9pZSjBuud0NiRzbe78RQpqImeNTW2YGZzb1fwOdN8dFQEaOw61fOpBAoh8+TeXYLYAOV6k3B/Bj1raSRrohAuiGZsWKtMJ/3ew+CydLAQy6Gm3vqWJJaVmQVQkp5SE2033dSPd0hBHrT+eMDqf4r0bCMa/OZiotjPnl2Po1FL8lHMAwBykzSRzczoQrwRkvY4YMM7+DUzZXvdMmLno8ulcmcpznJ73G9LjLRMLtHEOc40qC+ggigE5UkzRg6PUrhBg3BI1CgWAtr3MZy9ENhAX7ULCtjPN0DjMQ3gbrGHQV0ES/xGbcCDJm7mPQ8XAiZ/r6boLj6dk5jHsg4LsldgtExKB8jDqOJ7KEPI6ChZP25ZvJdqxQbPyTxcf9VoG7M="
