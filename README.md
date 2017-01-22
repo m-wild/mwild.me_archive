@@ -1,18 +1,8 @@
-Build/Publish instructions:
-```
-1. git clone tehmantra.github.io
-2. cd tehmantra.github.io build
-3. cd build
-4. git checkout master
-5. cd ..
-6. make changes in tehmantra.github.io...
-7. git commit -am && git push
-8. node index.js
-9. cd build
-10. git commit -am && git push
-```
+#### tehmantra.github.io
 
-This sets up `tehmantra.github.io/` as tracking the 'devel' branch, and `tehmantra.github.io/build/` as tracking 'master'.
+[![Build Status](https://travis-ci.org/tehmantra/tehmantra.github.io.svg?branch=devel)](https://travis-ci.org/tehmantra/tehmantra.github.io)
 
-Todo:
-* make a script to automate publishing
+##### Deployment
+Deployment is managed automagically by [travis-ci](https://travis-ci.org/tehmantra/tehmantra.github.io).
+
+The site can also be manually deployed by force-pushing the output of build/ to master
