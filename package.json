@@ -6,7 +6,7 @@
     "metalsmith": "*",
     "metalsmith-express": "*",
     "metalsmith-if": "*",
-    "metalsmith-less": "git+https://git@github.com/tehmantra/metalsmith-less.git",
+    "metalsmith-lesser": "*",
     "metalsmith-pug": "*",
     "metalsmith-watch": "*",
     "minimist": "*"
