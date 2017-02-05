@@ -1,11 +1,12 @@
 const Metalsmith  = require('metalsmith');
+const Autoprefix  = require('less-plugin-autoprefix');
 const collections = require('metalsmith-collections');
 const dates       = require('metalsmith-date-in-filename');
 const disqus      = require('metalsmith-disqus');
 const express     = require('metalsmith-express');
 const msIf        = require('metalsmith-if');
 const layouts     = require('metalsmith-layouts');
-const less        = require('metalsmith-less');
+const less        = require('metalsmith-lesser');
 const markdown    = require('metalsmith-markdown');
 const metallic    = require('metalsmith-metallic');
 const permalinks  = require('metalsmith-permalinks');
@@ -23,7 +24,12 @@ Metalsmith(__dirname)
   })
   .source("./src")
   .destination("./build")
-  .use(less())
+  .use(less({
+    copySource: false,
+    lessOptions: {
+      plugins: [new Autoprefix({browsers: ["last 2 versions"]})]
+    }
+  }))
   .use(dates())
   .use(collections({
     posts: {

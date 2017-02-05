@@ -3,6 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
+    "less": "latest",
+    "less-plugin-autoprefix": "latest",
     "metalsmith": "latest",
     "metalsmith-collections": "latest",
     "metalsmith-date-in-filename": "latest",
@@ -10,7 +12,7 @@
     "metalsmith-express": "latest",
     "metalsmith-if": "latest",
     "metalsmith-layouts": "latest",
-    "metalsmith-less": "git+https://git@github.com/tehmantra/metalsmith-less.git",
+    "metalsmith-lesser": "latest",
     "metalsmith-markdown": "latest",
     "metalsmith-metallic": "latest",
     "metalsmith-permalinks": "latest",
