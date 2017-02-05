@@ -2,7 +2,7 @@ const Metalsmith = require('metalsmith');
 const express   = require('metalsmith-express');
 const msIf      = require('metalsmith-if');
 const watch     = require('metalsmith-watch');
-const less      = require('metalsmith-less');
+const less      = require('metalsmith-lesser');
 const pug       = require('metalsmith-pug');
 
 const argv = require('minimist')(process.argv.slice(2));
