@@ -3,6 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
+    "less": "*",
+    "less-plugin-autoprefix": "*",
     "metalsmith": "*",
     "metalsmith-express": "*",
     "metalsmith-if": "*",
