@@ -1,11 +1,23 @@
-/* Base ----------------------------------------------------- */
-* { margin: 0; padding: 0; }
+// ------ base ------
+* {
+  // nothing should have a margin or padding by default..
+  // we can add this if we want it
+  margin: 0;
+  padding: 0; 
+}
 
+// make sure the page at least fills the browser
 html, body { height: 100%; }
+
+// ------ fonts ------
+@sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@serif:  Georgia, 'Times New Roman', Times, serif;
+@monospace: Consolas, "Liberation Mono", Courier, monospace;
+
 
 body {
   color: #737373;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: @sans;
   font-size: 13px;
   line-height: 18px;
   background-color: #fbfbfb;
@@ -26,32 +38,35 @@ a:hover   { color: #5b6786; text-decoration: underline; }
   zoom: 1;
 }
 
-/* Site header ---------------------------------------------- */
+// ------ header ------
 .site-header { min-height: 80px; }
-
 .site-header .wrap { padding-top: 30px; }
 
 .site-title,
 .site-title:hover,
 .site-title:visited {
   display: block;
-  color: #333;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  float: left;
-  line-height: 52px;
-  position: relative;
+  color: #fbfbfb;
+  background: #333;
+  font-family: @monospace;
+  font-size: 7px;
+  line-height: 8px;
+  font-weight: bold;
+  padding: 8px; 
+  max-width: 230px;
+  text-decoration: none;
 }
-.site-nav {
-  float: right;
-  line-height: 52px;
-}
-.site-nav .page-link {
-  margin-left: 20px;
-  color: #727272;
-  letter-spacing: -.5px;
-}
+
+// no longer used... might be back?
+// .site-nav {
+//   float: right;
+//   line-height: 52px;
+// }
+// .site-nav .page-link {
+//   margin-left: 20px;
+//   color: #727272;
+//   letter-spacing: -.5px;
+//}
 
 /* Site footer ---------------------------------------------- */
 .site-footer {
@@ -115,7 +130,7 @@ h6 {
 blockquote {
   padding: 13px 13px 21px 15px;
   margin-bottom: 18px;
-  font-family:georgia,serif;
+  font-family: @serif;
   font-style: italic;
 }
 blockquote p {
@@ -198,43 +213,28 @@ th {
   }
 }
 
-/** code/preformatted -------------------------------------- */
-code, pre {
-  font-family: Consolas, Menlo, monospace;
-}
-code {
-  background-color: #fbfbfb;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 1px 3px;
-  font-size: 12px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-  pre {
-  display: block;
-  padding: 8px;
-  margin: 4px 0px;
+
+// ------ code ------
+.hljs { 
+  // most of this is controlled by hljs themes
+  // but we want to override the margin/border/padding
+  margin: 4px;
+  border: 1px solid #d9d9d9;
+  padding: 12px;
+
+  // and set a consistent font/size
+  font-family: @monospace;
   line-height: 16px;
   font-size: 12px;
-  border: 1px solid #d9d9d9;
+  
+  // this makes sure that we let the browser wrap text 
+  // if the page width is small (ie. mobile)
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-pre code {
-  background-color: #fff;
-  color:#737373;
-  font-size: 12px;
-  padding: 0;
-}
-sup {
-  font-size: 0.83em;
-  vertical-align: super;
-  line-height: 0;
-}
 
-
-/** comments -------------------------------------- */
+// ------ disqus ------
 div.post-comments {
+  // just put some padding on top so comments feel separate from the atricle content
   padding-top: 30px;
 }
