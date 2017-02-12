@@ -175,8 +175,9 @@ th {
 
   @pad_w: 8px;
 
+  // make sure nothing in post-content can extend off the screen
   .post-content * {
-    max-width: calc(100vw - (2 * @pad_w));
+    max-width: calc(~'100vw' - (2 * @pad_w));
   }
 
   .wrap {
