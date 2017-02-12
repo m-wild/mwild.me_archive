@@ -1,13 +1,11 @@
-extends ./default.pug
-
-block head
-  link(rel='stylesheet' href='../css/main.css')
+extends ./main.pug
 
 block content
+
   div.post
     header.post-header
       p.meta
-        strong= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'}) + (author ? ' • ' + author : '')
+        strong= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'})
       h1= title
   
     article.post-content
