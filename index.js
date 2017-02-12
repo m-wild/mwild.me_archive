@@ -40,7 +40,9 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(metallic()) // highlight.js
+  .use(metallic({ // highlight.js
+    languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
+  }))
   .use(markdown({
     gfm: true,
     smartypants: true
@@ -61,7 +63,7 @@ Metalsmith(__dirname)
   })))
   .use(msIf(argv.watch, watch({
       livereload: argv.watch,
-      paths: { 
+      paths: {
         '${source}/css/**/*': '**/*', // css and layouts trigger a full rebuild
         './layouts/**/*': '**/*',
         '${source}/**/*': true // everything else rebuilds itself
