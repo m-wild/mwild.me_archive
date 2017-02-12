@@ -11,6 +11,7 @@ block content
 
           span
             h2(style='display: inline')
-              a.post-link(href=post.path)= post.title
+              //- we need to add a '/' to make the link absolute
+              a.post-link(href= '/' + post.path)= post.title
 
 

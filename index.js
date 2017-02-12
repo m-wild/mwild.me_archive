@@ -10,6 +10,7 @@ const less        = require('metalsmith-lesser');
 const markdown    = require('metalsmith-markdown');
 const metallic    = require('metalsmith-metallic');
 const permalinks  = require('metalsmith-permalinks');
+const pug         = require('metalsmith-pug');
 const watch       = require('metalsmith-watch');
 
 const argv = require('minimist')(process.argv.slice(2));
@@ -18,6 +19,7 @@ Metalsmith(__dirname)
   .metadata({
     site: {
       title: 'mwild',
+      baseurl: '/blog',
       url: 'https://mwild.me'
     }
   })
@@ -45,7 +47,7 @@ Metalsmith(__dirname)
     smartypants: true
   }))
   .use(permalinks({ // must be after markdown
-    pattern: ':title'
+    pattern: 'blog/:title'
   }))
   .use(layouts({
     engine: 'pug'
@@ -54,15 +56,17 @@ Metalsmith(__dirname)
     siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
   }))
+  .use(pug({
+    pretty: true
+  }))
   // --watch
-  .use(msIf(argv.watch, express({
-    document_root: './build' 
-  })))
+  .use(msIf(argv.watch, express()))
   .use(msIf(argv.watch, watch({
       livereload: argv.watch,
       paths: {
-        '${source}/css/**/*': '**/*', // css and layouts trigger a full rebuild
+        '${source}/**/css/**/*': '**/*', // css, layouts, templates trigger a full rebuild
         './layouts/**/*': '**/*',
+        '${source}/templates/**/*': '**/*',
         '${source}/**/*': true // everything else rebuilds itself
       }})))
   .build(function(err) {
