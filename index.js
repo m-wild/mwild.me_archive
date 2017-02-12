@@ -22,12 +22,14 @@ Metalsmith(__dirname)
       url: 'https://mwild.me'
     }
   })
-  .source("./src")
-  .destination("./build")
+  .source('./src')
+  .destination(argv.watch 
+    ? './build/blog' // when running locally we need to host at /blog to emulate prod
+    : './build') 
   .use(less({
     copySource: false,
     lessOptions: {
-      plugins: [new Autoprefix({browsers: ["last 2 versions"]})]
+      plugins: [new Autoprefix({browsers: ['last 2 versions']})]
     }
   }))
   .use(dates())
@@ -38,7 +40,7 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(metallic())
+  .use(metallic()) // highlight.js
   .use(markdown({
     gfm: true,
     smartypants: true
@@ -54,7 +56,9 @@ Metalsmith(__dirname)
     shortname: 'mwild'
   }))
   // --watch
-  .use(msIf(argv.watch, express()))
+  .use(msIf(argv.watch, express({
+    document_root: './build' 
+  })))
   .use(msIf(argv.watch, watch({
       livereload: argv.watch,
       paths: { 
