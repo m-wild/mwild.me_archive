@@ -1,0 +1,15 @@
+extends ./main.pug
+
+block content
+
+  div.post
+    header.post-header
+      p.meta
+        strong= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'})
+      h1= title
+  
+    article.post-content
+      != contents
+
+  div.post-comments
+    div#disqus_thread

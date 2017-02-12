@@ -1,0 +1,242 @@
+// ------ base ------
+* {
+  // nothing should have a margin or padding by default..
+  // we can add this if we want it
+  margin: 0;
+  padding: 0; 
+}
+
+// make sure the page at least fills the browser
+html, body { height: 100%; }
+
+// ------ fonts ------
+@sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@serif:  Georgia, 'Times New Roman', Times, serif;
+@monospace: Consolas, "Liberation Mono", Courier, monospace;
+
+
+body {
+  color: #737373;
+  font-family: @sans;
+  font-size: 13px;
+  line-height: 18px;
+  background-color: #fbfbfb;
+}
+
+a         { color: #8494c1; text-decoration: none; }
+a:visited { color: #ae84c1; }
+a:hover   { color: #5b6786; text-decoration: underline; }
+
+/* Utility */
+.wrap:before,
+.wrap:after { content:""; display:table; }
+.wrap:after { clear: both; }
+.wrap {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+  zoom: 1;
+}
+
+// ------ header ------
+.site-header { min-height: 80px; }
+.site-header .wrap { padding-top: 30px; }
+
+.site-title,
+.site-title:hover,
+.site-title:visited {
+  display: block;
+  color: #fbfbfb;
+  background: #333;
+  font-family: @monospace;
+  font-size: 7px;
+  line-height: 8px;
+  font-weight: bold;
+  padding: 8px; 
+  max-width: 230px;
+  text-decoration: none;
+}
+
+// no longer used... might be back?
+// .site-nav {
+//   float: right;
+//   line-height: 52px;
+// }
+// .site-nav .page-link {
+//   margin-left: 20px;
+//   color: #727272;
+//   letter-spacing: -.5px;
+//}
+
+/* Site footer ---------------------------------------------- */
+.site-footer {
+  padding: 30px 0;
+}
+.site-footer p {
+  font-size: 13px;
+  letter-spacing: -.3px;
+  color: #828282;
+}
+
+/* Page Content styles -------------------------------------- */
+.page-content .wrap {
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 0px 5px #e6e6e6;
+}
+
+/* Post lists ----------------------------------------------- */
+.posts { list-style-type: none; }
+
+.posts li { margin-bottom: 30px; }
+
+.posts .post-date { font-size: 0.85em; }
+
+/* Post styles ---------------------------------------------- */
+.post-content { margin: 0 0 30px; }
+
+.post-content > * { margin: 20px 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #404040;
+  line-height: 36px;
+}
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 13px;
+}
+
+blockquote {
+  padding: 13px 13px 21px 15px;
+  margin-bottom: 18px;
+  font-family: @serif;
+  font-style: italic;
+}
+blockquote p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.post-content ul,
+.post-content ol { padding-left: 20px; }
+
+
+// ------ images ------
+.post-content a img {
+  width: 800px;
+}
+.post-content a img:hover {
+  box-shadow: 0 0 10px #8494c1;
+}
+
+
+
+
+/* tables ------------------------------------------------- */
+table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+}
+td,th {
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+}
+th {
+  padding: 5px 10px;
+}
+
+
+
+/* media queries -------------------------------------------- */
+@media screen and (max-width: 800px) {
+
+  @pad_w: 8px;
+
+  // make sure nothing in post-content can extend off the screen
+  .post-content * {
+    max-width: calc(~'100vw' - (2 * @pad_w));
+  }
+
+  .wrap {
+    padding: 0 @pad_w;
+  }
+
+  .page-content .wrap {
+    padding: @pad_w;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: 0px 0px 0px;
+  }
+
+  .site-header {
+    min-height: 30px;
+  }
+
+  .site-header .wrap {
+    padding-top: 0px;
+  }
+
+  table {
+    display: block;
+    overflow: scroll;
+  }
+}
+
+@media only print {
+  body,code,pre code,h1,h2,h3,h4,h5,h6,p {
+    color: black;
+  }
+  table, pre {
+    page-break-inside: avoid;
+  }
+}
+
+
+// ------ code ------
+.hljs { 
+  // most of this is controlled by hljs themes
+  // but we want to override the margin/border/padding
+  margin: 4px;
+  border: 1px solid #d9d9d9;
+  padding: 12px;
+
+  // and set a consistent font/size
+  font-family: @monospace;
+  line-height: 16px;
+  font-size: 12px;
+  
+  // this makes sure that we let the browser wrap text 
+  // if the page width is small (ie. mobile)
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+// ------ disqus ------
+div.post-comments {
+  // just put some padding on top so comments feel separate from the atricle content
+  padding-top: 30px;
+}
