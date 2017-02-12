@@ -6,11 +6,19 @@
     "less": "*",
     "less-plugin-autoprefix": "*",
     "metalsmith": "*",
+    "metalsmith-collections": "*",
+    "metalsmith-date-in-filename": "*",
+    "metalsmith-disqus": "*",
     "metalsmith-express": "*",
     "metalsmith-if": "*",
+    "metalsmith-layouts": "*",
     "metalsmith-lesser": "*",
+    "metalsmith-markdown": "*",
+    "metalsmith-metallic": "*",
+    "metalsmith-permalinks": "*",
     "metalsmith-pug": "*",
     "metalsmith-watch": "*",
-    "minimist": "*"
+    "minimist": "*",
+    "pug": "*"
   }
 }
