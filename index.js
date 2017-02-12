@@ -53,10 +53,15 @@ Metalsmith(__dirname)
     siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
   }))
-  .use(msIf(argv.watch, 
-    express()))
-  .use(msIf(argv.watch, 
-    watch({livereload: argv.watch}))) // have to double barrel this..
+  // --watch
+  .use(msIf(argv.watch, express()))
+  .use(msIf(argv.watch, watch({
+      livereload: argv.watch,
+      paths: { 
+        '${source}/css/**/*': '**/*', // css and layouts trigger a full rebuild
+        './layouts/**/*': '**/*',
+        '${source}/**/*': true // everything else rebuilds itself
+      }})))
   .build(function(err) {
     if (err) throw err;
   });
