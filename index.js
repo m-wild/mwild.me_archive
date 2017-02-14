@@ -46,6 +46,9 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
+  .use(metallic({ // highlight.js -- must be before markdown -> needs to see the md ```
+    languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
+  }))
   .use(markdown({
     gfm: true,
     smartypants: true
@@ -59,9 +62,6 @@ Metalsmith(__dirname)
   }))
 
   // 3. --- then additions to blog posts
-  .use(metallic({ // highlight.js
-    languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
-  }))
   .use(disqus({
     siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
