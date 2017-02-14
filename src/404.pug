@@ -3,10 +3,25 @@ html
   head
     meta(charset='utf-8')
     title 404
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat')
     link(rel='stylesheet' href='./css/404.css')
-body
-  div
+  body
     h1 404
-    p
+    strong
       a(href='#' onclick='window.history.back();') Turn back now
+
+  style(type='text/css').
+    body {
+      margin: 0 auto;
+      padding: 10px;
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.85em;
+      text-align: center;
+      color: #444;
+    }
+    h1 {
+      font-size: 25em;
+      margin: auto;
+      margin-top: 10%;
+    }
+    a:link, a:visited { color: #444; text-decoration: none; }
+    a:hover, a:active { color: #444; text-decoration: underline; }
