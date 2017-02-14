@@ -28,7 +28,7 @@ Metalsmith(__dirname)
   .use(less({
     copySource: false,
     lessOptions: {
-      plugins: [new Autoprefix({browsers: ['last 2 versions']})]
+      plugins: [new Autoprefix()]
     }
   }))
   .use(dates())
