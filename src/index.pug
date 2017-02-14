@@ -1,95 +1,97 @@
-extends templates/default.pug
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
 
-block head
-  title mwild
-  link(rel='stylesheet' type='text/css' href='./css/jquery.terminal.css')
-  link(rel='stylesheet' type='text/css' href='./css/index.css')
+    title mwild
 
-block no-nav
+    link(rel='stylesheet' type='text/css' href='./css/jquery.terminal.css')
+    link(rel='stylesheet' type='text/css' href='./css/index.css')
 
-block body
-
-  pre.heading-no-nav.
-    login as: root
-    Authenticating with public key #[span#publicKey]
-    Last login: #[span#lastLogin] from #[span#ipAddr]
-    Welcome to Ubuntu 16.10 (GNU/Linux 4.8.0-30-generic x86_64)
-
-  pre.heading.
-     __    __     __     __     __     __         _____
-    /\ "-./  \   /\ \  _ \ \   /\ \   /\ \       /\  __-.
-    \ \ \-./\ \  \ \ \/ ".\ \  \ \ \  \ \ \____  \ \ \/\ \
-     \ \_\ \ \_\  \ \__/".~\_\  \ \_\  \ \_____\  \ \____-
-      \/_/  \/_/   \/_/   \/_/   \/_/   \/_____/   \/____/
-
-  -
-    var contents = {
-      'blog/': 'Blog',
-      'about/': 'About Me',
-      'webgl-tutorials/': 'WebGL Tutorials'
-    };
-  pre
-    each text, link in contents
-      a(href=link)= '* '+ text + ': ' + link
+  body
+    div.main-content
+      pre.heading-no-nav.
+        login as: root
+        Authenticating with public key #[span#publicKey]
+        Last login: #[span#lastLogin] from #[span#ipAddr]
+        Welcome to Ubuntu 16.10 (GNU/Linux 4.8.0-30-generic x86_64)
+    
+      pre.heading.
+         __    __     __     __     __     __         _____
+        /\ "-./  \   /\ \  _ \ \   /\ \   /\ \       /\  __-.
+        \ \ \-./\ \  \ \ \/ ".\ \  \ \ \  \ \ \____  \ \ \/\ \
+         \ \_\ \ \_\  \ \__/".~\_\  \ \_\  \ \_____\  \ \____-
+          \/_/  \/_/   \/_/   \/_/   \/_/   \/_____/   \/____/
+    
+      -
+        var contents = {
+          'blog/': 'Blog',
+          'about/': 'About Me',
+          'webgl-tutorials/': 'WebGL Tutorials'
+        };
+      pre
+        each text, link in contents
+          a(href=link)= '* '+ text + ': ' + link
+          br
       br
-  br
-
-  script.
-    function rand(min, max) { 
-      return Math.floor(Math.random() * (max - min)) + min; 
-    }
-    var lastLogin = new Date(Date.now() - (rand(1000000000,10000000000)));
-    document.getElementById('lastLogin').textContent = lastLogin;
-
-    var ipAddr = `${rand(10,255)}.${rand(10,255)}.${rand(1,255)}.${rand(1,255)}`;
-    document.getElementById('ipAddr').textContent = ipAddr;
-
-    var publicKey = '"ssh-rsa-' + rand(1000,10000) + '"';
-    document.getElementById('publicKey').textContent = publicKey;
-
-    var contents = !{JSON.stringify(contents)};
-  
-
-  div#terminal(style='min-height: 200px;')
-  //- need jquery for the terminal library
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.11.23/js/jquery.terminal.min.js')
-
-  script.
-    jQuery(function($, undefined) {
-      $('#terminal').terminal(function(command, term) {
-        if (command !== '') {
-          try {
-            var commandArr = command.split(' ');
-            switch (commandArr[0]) {
-              case 'help':
-                term.echo('Avaliable commands:\n\t' +
-                          'help, ls, cd <directory>');
-                break;
-              case 'ls':
-                var result = '';
-                for (var d in contents) { result += d + ' '; }
-                term.echo(result);
-                break;
-              case 'cd':
-                window.location.href += commandArr[1]
-                break;
-              default:
-                var result = window.eval(command);
-                if (result !== undefined) {
-                  term.echo(new String(result));
-                }
-                break;
-            }
-          } catch(e) {
-            term.error(new String(e));
-          }
-        } else {
-          term.echo('');
-        }}, {
-          greetings: '',
-          prompt: '~ root# '
-        });
-      });
-
+    
+      script.
+        function rand(min, max) { 
+          return Math.floor(Math.random() * (max - min)) + min; 
+        }
+        var lastLogin = new Date(Date.now() - (rand(1000000000,10000000000)));
+        document.getElementById('lastLogin').textContent = lastLogin;
+    
+        var ipAddr = `${rand(10,255)}.${rand(10,255)}.${rand(1,255)}.${rand(1,255)}`;
+        document.getElementById('ipAddr').textContent = ipAddr;
+    
+        var publicKey = '"ssh-rsa-' + rand(1000,10000) + '"';
+        document.getElementById('publicKey').textContent = publicKey;
+    
+        var contents = !{JSON.stringify(contents)};
       
+    
+      div#terminal(style='min-height: 200px;')
+      //- need jquery for the terminal library
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.11.23/js/jquery.terminal.min.js')
+    
+      script.
+        jQuery(function($, undefined) {
+          $('#terminal').terminal(function(command, term) {
+            if (command !== '') {
+              try {
+                var commandArr = command.split(' ');
+                switch (commandArr[0]) {
+                  case 'help':
+                    term.echo('Avaliable commands:\n\t' +
+                              'help, ls, cd <directory>');
+                    break;
+                  case 'ls':
+                    var result = '';
+                    for (var d in contents) { result += d + ' '; }
+                    term.echo(result);
+                    break;
+                  case 'cd':
+                    window.location.href += commandArr[1]
+                    break;
+                  default:
+                    var result = window.eval(command);
+                    if (result !== undefined) {
+                      term.echo(new String(result));
+                    }
+                    break;
+                }
+              } catch(e) {
+                term.error(new String(e));
+              }
+            } else {
+              term.echo('');
+            }}, {
+              greetings: '',
+              prompt: '~ root# '
+            });
+          });
+    
+          
