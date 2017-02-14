@@ -11,22 +11,26 @@ html
     link(rel='stylesheet' href= site.baseurl + '/css/main.css')
 
   body
-    header.site-header
-      div.wrap
-        a.site-title(href= site.baseurl)
-          pre.site-title.
+    header
+      nav.left
+        a(href='/')
+          pre.
              __    __     __     __     __     __         _____
             /\ "-./  \   /\ \  _ \ \   /\ \   /\ \       /\  __-.
             \ \ \-./\ \  \ \ \/ ".\ \  \ \ \  \ \ \____  \ \ \/\ \
              \ \_\ \ \_\  \ \__/".~\_\  \ \_\  \ \_____\  \ \____-
               \/_/  \/_/   \/_/   \/_/   \/_/   \/_____/   \/____/
+      nav.right
+        a(href='/blog') posts
+        a(href='/about') about
+        a(href='//massesnz.com') music
+        a(href='//github.com/tehmantra') code
 
-    div.page-content
-      div.wrap
-        block content
-          != contents
+
+    main
+      block content
+        != contents
 
 
-    div.wrap
-      div.site-footer
-        p &nbsp;
+    footer
+      p &nbsp;

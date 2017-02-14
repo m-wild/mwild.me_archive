@@ -2,14 +2,11 @@ extends ./main.pug
 
 block content
 
-  div.post
-    header.post-header
-      p.meta
-        strong= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'})
-      h1= title
+  article
+    h1= title
+    time= date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'})
   
-    article.post-content
-      != contents
+    != contents
 
-  div.post-comments
+  section
     div#disqus_thread

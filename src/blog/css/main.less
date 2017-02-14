@@ -1,44 +1,156 @@
-// ------ base ------
-* {
-  // nothing should have a margin or padding by default..
-  // we can add this if we want it
-  margin: 0;
-  padding: 0; 
+// --- fonts
+@font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-serif:  Georgia, 'Times New Roman', serif;
+@font-monospace: Consolas, "Liberation Mono",  monospace;
+
+// --- colors
+@color-black: #333333;
+@color-gray6: #404040;
+@color-gray5: #737373;
+@color-gray4: #828282;
+@color-gray3: #dddddd;
+@color-gray2: #e6e6e6;
+@color-gray1: #fbfbfb;
+@color-blue: #8494c1;
+@color-purple: #ae84c1;
+@color-darkblue: #5b6786;
+
+// --- dimensions
+@dim-max-width: 800px;
+@dim-pad-width: 8px;
+
+// --- header/nav
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding-bottom: 1.2em;
+  
+  font-family: @font-monospace;
+
+  nav.right {
+    align-self: flex-end;
+    padding-bottom: 1.2em;
+    a {
+      padding-left: 1.2em;
+    }
+  }
+  nav.left {
+    font-weight: bold;
+    a {
+      color: @color-black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-// ------ fonts ------
-@font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-@font-serif:  Georgia, 'Times New Roman', Times, serif;
-@font-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
-
-// make sure the page at least fills the browser
-html, body { height: 100%; }
-
+// --- body/main/article
 body {
-  color: #737373;
+  margin: 40px auto;
+  padding: 0 @dim-pad-width;
+  max-width: @dim-max-width;
   font-family: @font-sans;
-  font-size: 13px;
-  line-height: 18px;
-  background-color: #fbfbfb;
+  font-size: 0.9em;
+  color: @color-gray6;
 }
 
 a { 
-  color: #8494c1;
-  text-decoration: none; 
+  color: @color-blue;
+  text-decoration: none;
   transition: color .3s ease-in-out;
   &:visited {
-    color: #ae84c1;
+    color: @color-purple;
   }
   &:hover {
-    color: #5b6786;
+    color: @color-darkblue;
     text-decoration: underline;
-    animation: zomg 3s infinite;
+    .zomg;
+  }
+}
+
+article > time {
+  font-family: @font-monospace;
+  font-size: small;
+}
+article a > img:hover {
+  box-shadow: 0 0 10px @color-blue; // make images look clickable
+}
+
+
+// --- tables
+table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+  td, th { border: 1px solid @color-gray3; }
+  td { padding: 3px 10px; }
+  th { padding: 5px 10px; }
+}
+// --- quotes
+blockquote {
+  font-family: @font-serif;
+  font-style: italic;
+}
+// --- lists
+ul {
+  list-style-type: square;
+
+  &.post-list {
+    li {
+      padding-bottom: 3px;
+    }
+    a {
+      font-size: 1.2em;
+    }
   }
 }
 
 
+// --- mobile
+@media screen and (max-width: @dim-max-width) {
+  // make sure nothing can extend off the screen
+  body * {
+     max-width: calc(~'100vw' - (2 * @dim-pad-width));
+  }
+
+  // make tables scroll independent of the rest of the page
+  table {
+    display: block;
+    overflow: scroll;
+  }
+}
+
+
+// --- code
+.hljs { 
+  // most of this is controlled by hljs themes
+  // but we want to override the margin/border/padding
+  // margin: 4px;
+  border: 1px solid @color-gray3;
+  // padding: 12px;
+
+  // and set a consistent font/size
+  font-family: @font-monospace;
+  
+  // this makes sure that we let the browser wrap text 
+  // if the page width is small (ie. mobile)
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+// --- disqus
+#disqus_thread {
+  padding-top: 40px;
+}
+
+
+// --- zomg
 // thanks meowni.ca
+.zomg { animation: zomg 3s infinite; }
+.zomgimg { animation: zomgimg 0.9s infinite; }
 @keyframes zomg {
   0%, 100% { color: #7ccdea; }
   16% { color: #0074D9; }
@@ -52,231 +164,4 @@ a {
   25% { filter: invert(10%) saturate(500%) hue-rotate(180deg); }
   50% { filter: invert(10%) saturate(300%) hue-rotate(300deg); }
   75% { filter: invert(10%) saturate(500%) hue-rotate(90deg); }
-}
-
-// ------ util ------
-.wrap {
-  max-width: 800px;
-  padding: 0 30px;
-  margin: 0 auto;
-  zoom: 1;
-  &::before,
-  &::after {
-    content:""; 
-    display:table;
-  }
-  &::after {
-    clear: both;
-  }
-}
-
-// ------ header ------
-@logo_height: 8px;
-
-header {
-  font-family: @font-monospace;
-  min-height: 80px;
-  .wrap {
-    padding-top: 10px;
-  }
-  nav {
-    float: right;
-  }
-}
-
-.site-title,
-.site-title:hover,
-.site-title:visited {
-  display: block;
-  color: #333;
-  font-size: 7px;
-  line-height: @logo_height;
-  font-weight: bold;
-  padding: 8px; 
-  max-width: 230px;
-  text-decoration: none;
-}
-.site-title:hover {
-  color: #8494c1;
-  animation: zomg 3s infinite;  
-}
-
-
-
-
-// ------ footer ------
-.site-footer {
-  padding: 30px 0;
-  p {
-    font-size: 13px;
-    letter-spacing: -.3px;
-    color: #828282;
-  }
-}
-
-// ------ content ------
-.page-content .wrap {
-  padding: 30px;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0px 0px 5px #e6e6e6;
-}
-
-// ------ post list ------
-.posts { 
-  list-style-type: none; 
-  li {
-   margin-bottom: 30px; 
-  }
-  .post-date {
-    font-size: 0.85em; 
-  }
-}
-
-
-// ------ post ------
-.post-content { 
-  margin: 0 0 30px; 
-  > * {
-    margin: 20px 0; 
-  }
-  ul, ol {
-    padding-left: 20px; 
-  }
-  a img {
-    width: 800px;
-    &:hover {
-      box-shadow: 0 0 10px #8494c1;
-    }
-  }
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #404040;
-  line-height: 36px;
-}
-h1 {
-  margin-bottom: 18px;
-  font-size: 30px;
-}
-h2 {
-  font-size: 24px;
-}
-h3 {
-  font-size: 18px;
-}
-h4 {
-  font-size: 16px;
-}
-h5 {
-  font-size: 14px;
-}
-h6 {
-  font-size: 13px;
-}
-
-blockquote {
-  padding: 13px 13px 21px 15px;
-  margin-bottom: 18px;
-  font-family: @font-serif;
-  font-style: italic;
-  p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
-  }
-}
-
-
-
-// ------ tables ------
-table {
-  margin: 10px 0 15px 0;
-  border-collapse: collapse;
-  td,th { border: 1px solid #ddd; }
-  td { padding: 3px 10px; }
-  th { padding: 5px 10px; }
-}
-
-
-
-
-// ------ mobile responsive ------
-@media screen and (max-width: 800px) {
-
-  @pad_w: 8px;
-
-  // make sure nothing in post-content can extend off the screen
-  .post-content * {
-    max-width: calc(~'100vw' - (2 * @pad_w));
-  }
-
-  .wrap {
-    padding: 0 @pad_w;
-  }
-
-  .page-content .wrap {
-    padding: @pad_w;
-    border-left: 0;
-    border-right: 0;
-    box-shadow: 0px 0px 0px;
-  }
-
-  .site-header {
-    min-height: 30px;
-  }
-
-  .site-header .wrap {
-    padding-top: 0px;
-  }
-
-  table {
-    display: block;
-    overflow: scroll;
-  }
-}
-
-// ------ printing ------
-@media only print {
-  body,code,pre code,h1,h2,h3,h4,h5,h6,p {
-    // remove text colors for print
-    color: black;
-  }
-  table, pre {
-    page-break-inside: avoid;
-  }
-}
-
-
-// ------ code ------
-.hljs { 
-  // most of this is controlled by hljs themes
-  // but we want to override the margin/border/padding
-  margin: 4px;
-  border: 1px solid #d9d9d9;
-  padding: 12px;
-
-  // and set a consistent font/size
-  font-family: @font-monospace;
-  line-height: 16px;
-  font-size: 12px;
-  
-  // this makes sure that we let the browser wrap text 
-  // if the page width is small (ie. mobile)
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-// ------ disqus ------
-div.post-comments {
-  // just put some padding on top so comments feel separate from the atricle content
-  padding-top: 30px;
 }
