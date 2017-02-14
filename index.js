@@ -25,12 +25,19 @@ Metalsmith(__dirname)
   })
   .source('./src')
   .destination('./build')
+
+  // 1. --- do non-blog related stuff
   .use(less({
     copySource: false,
     lessOptions: {
       plugins: [new Autoprefix()]
     }
   }))
+  .use(pug({ // pug should be before markdown (because we use layouts{engine:pug}, md gets converted to pug)
+    pretty: true
+  }))
+
+  // 2. --- then blog stuff
   .use(dates())
   .use(collections({
     posts: {
@@ -39,36 +46,34 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(metallic({ // highlight.js
-    languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
-  }))
   .use(markdown({
     gfm: true,
     smartypants: true
   }))
-  .use(permalinks({ // must be after markdown
-    pattern: 'blog/:title'
+  .use(permalinks({ // must be after markdown -> only works on .html
+    pattern: 'blog/:title',
+    relative: false // we use absolute paths for everything instead of duplicating files
   }))
   .use(layouts({
     engine: 'pug'
+  }))
+
+  // 3. --- then additions to blog posts
+  .use(metallic({ // highlight.js
+    languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
   }))
   .use(disqus({
     siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
   }))
-  .use(pug({
-    pretty: true
-  }))
-  // --watch
+
+  // 4. --- watch
   .use(msIf(argv.watch, express()))
   .use(msIf(argv.watch, watch({
-      livereload: argv.watch,
-      paths: {
-        '${source}/**/css/**/*': '**/*', // css, layouts, templates trigger a full rebuild
-        './layouts/**/*': '**/*',
-        '${source}/templates/**/*': '**/*',
-        '${source}/**/*': true // everything else rebuilds itself
-      }})))
+    livereload: argv.watch
+  })))
+
+  // 5. --- finally, build the site
   .build(function(err) {
     if (err) throw err;
   });
