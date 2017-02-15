@@ -127,16 +127,17 @@ code {
   // set a consistent font/size
   font-family: @font-monospace;
   font-size: 0.9em;
+
+  // this makes sure that we let the browser wrap text 
+  // if the page width is small (ie. mobile)
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
   &.hljs { 
     // most of this is controlled by hljs themes
     // but we want to override the border/padding
     border: 1px solid @color-gray3;
     padding: 12px;
-
-    // this makes sure that we let the browser wrap text 
-    // if the page width is small (ie. mobile)
-    white-space: pre-wrap;
-    word-wrap: break-word;
   }
 }
 
