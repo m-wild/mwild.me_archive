@@ -70,9 +70,12 @@ Metalsmith(__dirname)
   // 4. --- watch
   .use(msIf(argv.watch, express()))
   .use(msIf(argv.watch, watch({
-    livereload: argv.watch
+    livereload: argv.watch,
+    paths: {
+      '${source}/**/*': true, // each file reloads itself
+      './layouts/**/*': '**/*' // layouts need to reload everything, which unfortunately breaks collections
+    }
   })))
-
   // 5. --- finally, build the site
   .build(function(err) {
     if (err) throw err;
