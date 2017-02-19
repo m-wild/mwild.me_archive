@@ -14,11 +14,13 @@ block content
       'about/': 'About Me',
       'webgl-tutorials/': 'WebGL Tutorials'
     };
+
   pre Contents:
     br
     each text, link in contents
       a(href=link)= '* '+ text + ': ' + link
       br
+
   pre Recient posts:
     br
     each post in posts.slice(0,3)
@@ -41,10 +43,9 @@ block content
     var contents = !{JSON.stringify(contents)};
   
 
-  div#terminal(style='min-height: 200px;')
+  div#terminal(style='min-height: 170px;')
 
   link(rel='stylesheet' type='text/css' href='./css/jquery.terminal.css')
-  
   //- need jquery for the terminal library =/
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.11.23/js/jquery.terminal.min.js')

@@ -5,10 +5,8 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
 
     title= (title ? title + ' - ' : '') + site.title
-
-    //- for highlight.js
-    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/xcode.min.css')
-    link(rel='stylesheet' href= site.baseurl + '/css/main.css')
+    
+    link(rel='stylesheet' href='/css/main.css')
 
   body
     header
@@ -34,3 +32,6 @@ html
 
     footer
       p &nbsp;
+
+    //- for highlight.js
+    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/xcode.min.css')
