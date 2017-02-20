@@ -18,11 +18,8 @@ const argv = require('minimist')(process.argv.slice(2));
 Metalsmith(__dirname)
   .metadata({
     site: {
-      title: 'mwild',
-      baseurl: '/blog',
-      url: 'https://mwild.me'
-    }
-  })
+      title: 'mwild'
+  }})
   .source('./src')
   .destination('./build')
 
@@ -31,11 +28,8 @@ Metalsmith(__dirname)
     copySource: false,
     lessOptions: {
       plugins: [new Autoprefix()]
-    }
-  }))
-  .use(pug({ // pug should be before markdown (because we use layouts{engine:pug}, md gets converted to pug)
-    pretty: true
-  }))
+  }}))
+  .use(pug()) // pug should be before markdown (because we use layouts{engine:pug}, md gets converted to pug)
 
   // 2. --- then blog stuff
   .use(dates())
@@ -44,8 +38,7 @@ Metalsmith(__dirname)
       pattern: '**/blog/posts/**/*.md',
       sortBy: 'date',
       reverse: true
-    }
-  }))
+  }}))
   .use(metallic({ // highlight.js -- must be before markdown -> needs to see the md ```
     languages: [] // disable lang autodetection, allows us to have 'plain text' code blocks
   }))
@@ -66,7 +59,7 @@ Metalsmith(__dirname)
     siteurl: 'https://mwild.me/blog/',
     shortname: 'mwild'
   }))
-
+  
   // 4. --- watch
   .use(msIf(argv.watch, express()))
   .use(msIf(argv.watch, watch({
@@ -74,8 +67,7 @@ Metalsmith(__dirname)
     paths: {
       '${source}/**/*': true, // each file reloads itself
       './layouts/**/*': '**/*' // layouts need to reload everything, which unfortunately breaks collections
-    }
-  })))
+  }})))
   // 5. --- finally, build the site
   .build(function(err) {
     if (err) throw err;
