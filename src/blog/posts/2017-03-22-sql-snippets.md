@@ -2,10 +2,11 @@
 layout: post.pug
 title: SQL Snippets
 category: tech
-excerpt: Useful(?) SQL snippets for MSSQL
+excerpt: Useful(?) SQL snippets
 comments: true
 ---
 
+### MSSQL
 Snippets for quickly creating/backup/dropping dbs. All should be run on `master`.
 
 Create a database
@@ -46,4 +47,17 @@ execute sp_attach_db
 	@dbname = '<db_name>',
 	@filename1 = 'g:\.db\<db_name>.mdf', 
 	@filename2 = 'g:\.db\<db_name>_log.ldf'
+```
+
+
+### postgres
+
+Create a user
+```sql
+create user <username> with password '<password>';
+```
+
+Create a database
+```sql
+create database <db_name> with owner <user_name>;
 ```
