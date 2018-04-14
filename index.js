@@ -2,7 +2,6 @@ const Metalsmith  = require('metalsmith');
 const Autoprefix  = require('less-plugin-autoprefix');
 const collections = require('metalsmith-collections');
 const dates       = require('metalsmith-date-in-filename');
-const disqus      = require('metalsmith-disqus');
 const express     = require('metalsmith-express');
 const msIf        = require('metalsmith-if');
 const layouts     = require('metalsmith-layouts');
@@ -19,7 +18,12 @@ Metalsmith(__dirname)
   .metadata({
     site: {
       title: 'mwild'
-  }})
+    },
+    utterances: {
+      repo: 'tehmantra/tehmantra.github.io',
+      issueterm: 'title'
+    }
+  })
   .source('./src')
   .destination('./build')
 
@@ -55,11 +59,7 @@ Metalsmith(__dirname)
   }))
 
   // 3. --- then additions to blog posts
-  .use(disqus({
-    siteurl: 'https://mwild.me/blog/',
-    shortname: 'mwild'
-  }))
-  
+
   // 4. --- watch
   .use(msIf(argv.watch, express()))
   .use(msIf(argv.watch, watch({

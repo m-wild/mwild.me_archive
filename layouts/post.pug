@@ -8,5 +8,6 @@ block content
   
     != contents
 
-  section
-    div#disqus_thread
+  if comments
+    script(src="https://utteranc.es/client.js" repo=utterances.repo issue-term=utterances.issueterm async)
+

@@ -8,7 +8,6 @@
     "metalsmith": "latest",
     "metalsmith-collections": "latest",
     "metalsmith-date-in-filename": "latest",
-    "metalsmith-disqus": "latest",
     "metalsmith-express": "latest",
     "metalsmith-if": "latest",
     "metalsmith-layouts": "latest",

@@ -3,4 +3,3 @@ node_modules/
 build/
 _site/
 *.lock
-package-lock.json
