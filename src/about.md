@@ -15,6 +15,12 @@ And my band **[MASSES](https://massesnz.com)**.
 
 <br>
 
-#### Contact me
-* via email [michael@mwild.me](mailto:michael@mwild.me).
-* [nz.linkedin.com/in/mwildmannz/](http://nz.linkedin.com/in/mwildmannz/).
+### Keybase
+
+I'm [tehmantra on keybase.io](https://keybase.io/tehmantra), you can verify my domain ownership [here](https://keybase.io/tehmantra/sigchain#6e090f1a195b586982f8139243f5271e294db4add7412f7f508757a8d1874d8f0f).
+
+<br>
+
+### Contact me
+* via email [michael@mwild.me](mailto:michael@mwild.me)
+* [nz.linkedin.com/in/mwildmannz/](http://nz.linkedin.com/in/mwildmannz/)
