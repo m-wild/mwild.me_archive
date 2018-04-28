@@ -28,6 +28,7 @@ header {
   padding-bottom: 1.2em;
   font-family: @font-monospace;
   nav.left {
+    font-size: 0.9em;
     font-weight: bold;
     a {
       color: @color-black;
@@ -52,7 +53,7 @@ body {
   padding: 0 @dim-pad-width;
   max-width: @dim-max-width;
   font-family: @font-sans;
-  font-size: 0.9em;
+  font-size: 1.1em;
   color: @color-gray6;
 }
 
@@ -127,10 +128,21 @@ ul {
 
 
 // --- code
+p > code {
+  // slightly smaller than regular text
+  font-size: 0.85em;
+  color: #000;
+  background: darken(@color-gray1, 3%);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+};
+pre > code { 
+  // even smaller than code in the body
+  font-size: 0.75em; 
+}
 code {
-  // set a consistent font/size
+  // set a consistent font
   font-family: @font-monospace;
-  font-size: 0.9em;
 
   // this makes sure that we let the browser wrap text 
   // if the page width is small (ie. mobile)
