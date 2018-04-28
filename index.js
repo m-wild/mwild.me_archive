@@ -54,9 +54,7 @@ Metalsmith(__dirname)
     pattern: 'blog/:title',
     relative: false // we use absolute paths for everything instead of duplicating files
   }))
-  .use(layouts({
-    engine: 'pug'
-  }))
+  .use(layouts())
 
   // 3. --- then additions to blog posts
 
