@@ -2,7 +2,7 @@
 layout: post.pug
 title: Importing CSV to Postgres on Docker
 category: tech
-excerpt: 
+excerpt: As painless as locally!
 comments: true
 ---
 
