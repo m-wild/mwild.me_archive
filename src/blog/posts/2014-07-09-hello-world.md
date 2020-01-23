@@ -3,7 +3,6 @@ layout: post.pug
 title: Hello World!
 category: tech
 excerpt: Finally decided to move all the .txt notes on my computer onto the internet!
-comments: true
 ---
 
 Finally decided to move all the .txt notes on my computer onto the internet!

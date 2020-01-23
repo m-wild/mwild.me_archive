@@ -3,7 +3,6 @@ layout: post.pug
 title: Importing CSV to Postgres on Docker
 category: tech
 excerpt: As painless as locally!
-comments: true
 ---
 
 First, start postgres in Docker, we'll use a persistent volume just incase we want to drop and re-create the container.

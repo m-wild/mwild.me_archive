@@ -3,7 +3,6 @@ layout: post.pug
 title: PGP in ProtonMail and Gmail
 category: tech
 excerpt: Attempting to verify a PGP signed mail from ProtonMail sent to Gmail
-comments: true
 ---
 
 I switched my personal email to [ProtonMail](https://protonmail.com) about a year ago. I've had a personal domain with email for a few years, and used to just use mailgun to forward all emails to gmail. This essentially meant that my personal domain email was less trusted than gmail. With the privacy/security landscape being what it is these days, I wanted my personal domain email to be _more_ trusted!

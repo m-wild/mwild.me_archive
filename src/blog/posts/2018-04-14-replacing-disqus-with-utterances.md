@@ -3,7 +3,6 @@ layout: post.pug
 title: Replacing Disqus with utterances
 category: tech
 excerpt: Replacing one empty comments system with another :^)
-comments: true
 ---
 
 [utterances](https://utteranc.es/) is a very cool commenting system based on GitHub issues.
@@ -48,4 +47,4 @@ diff --git a/index.js b/index.js
 +  })
 ```
 
-Check out the comments below 👇👇👇
+~~Check out the comments below 👇👇👇~~

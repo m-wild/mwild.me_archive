@@ -12,16 +12,13 @@ const permalinks  = require('metalsmith-permalinks');
 const pug         = require('metalsmith-pug');
 const watch       = require('metalsmith-watch');
 
+// Parse command line args
 const argv = require('minimist')(process.argv.slice(2));
 
 Metalsmith(__dirname)
   .metadata({
     site: {
       title: 'mwild'
-    },
-    utterances: {
-      repo: 'tehmantra/tehmantra.github.io',
-      issueterm: 'title'
     }
   })
   .source('./src')

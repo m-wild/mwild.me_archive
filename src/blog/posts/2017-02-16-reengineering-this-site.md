@@ -3,7 +3,7 @@ layout: post.pug
 title: Reengineering this site
 category: tech
 excerpt: From Jekyll to Metalsmith
-comments: true
+: true
 ---
 
 

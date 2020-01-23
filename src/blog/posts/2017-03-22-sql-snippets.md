@@ -3,7 +3,6 @@ layout: post.pug
 title: SQL Snippets
 category: tech
 excerpt: Useful(?) SQL snippets
-comments: true
 ---
 
 ### MSSQL

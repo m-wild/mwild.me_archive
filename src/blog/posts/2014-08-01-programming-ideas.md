@@ -3,7 +3,6 @@ layout: post.pug
 title: Programming ideas
 category: tech
 excerpt: A list of game programming ideas from some reddit user.
-comments: true
 ---
 
 A list of game programming ideas from some reddit user.
