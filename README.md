@@ -1,15 +1,24 @@
-#### tehmantra.github.io
+# mwild.me
 
-[![Build Status](https://travis-ci.org/tehmantra/tehmantra.github.io.svg?branch=devel)](https://travis-ci.org/tehmantra/tehmantra.github.io)
+## Build / Run Locally
+#### Prerequisites
+* NodeJS
+* NPM
 
-##### Deployment
-Deployment is managed automagically by [travis-ci](https://travis-ci.org/tehmantra/tehmantra.github.io).
-
-The site can also be manually deployed by force-pushing the output of build/ to master
-
-
-##### Development
+#### Build
+```sh
+$ npm install
+$ node ./index.js
 ```
-npm install
-node ./index.js --watch
+
+#### Run
+```sh
+$ npm install
+$ node ./index.js --watch
 ```
+
+## Deployment
+
+~~See the contents of `.travis.yml` for more info.~~
+
+The site can be manually deployed by force-pushing the output of build/ to master.
