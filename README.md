@@ -19,4 +19,10 @@ http-server ./build/
 
 # deploy production build
 ./deploy
+
+# clean build output
+./clean
+
+# clean build output and dependencies
+./clean --all
 ```

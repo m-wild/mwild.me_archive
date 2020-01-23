@@ -1,4 +1,5 @@
 $build_out_dir = "./build"
+$target_repo = "https://github.com/tehmantra/tehmantra.github.io.git"
 
 if (-not (Test-Path $build_out_dir)) {
     Write-Host "ERR: Build output directory ($build_out_dir) is missing." -ForegroundColor Red
@@ -22,8 +23,6 @@ Set-Location $build_out_dir
 git init
 git add .
 git commit -m "Production build for ${commit}"
-#git push --force --quiet "https://github.com/tehmantra/tehmantra.github.io.git" master:master
+git push --force $target_repo master:master
 
 Pop-Location
-
-
