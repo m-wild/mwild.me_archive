@@ -1,24 +1,22 @@
 # mwild.me
 
-## Build / Run Locally
-#### Prerequisites
+## Prerequisites
 * NodeJS
 * NPM
 
-#### Build
+## Scripts
+
 ```sh
-$ npm install
-$ node ./index.js
+# build site and exit.
+./build
+
+# build and watch for changes
+./build --watch
+
+# test production build
+./build
+http-server ./build/
+
+# deploy production build
+./deploy
 ```
-
-#### Run
-```sh
-$ npm install
-$ node ./index.js --watch
-```
-
-## Deployment
-
-~~See the contents of `.travis.yml` for more info.~~
-
-The site can be manually deployed by force-pushing the output of build/ to master.

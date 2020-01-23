@@ -21,6 +21,7 @@ Metalsmith(__dirname)
       title: 'mwild'
     }
   })
+  .clean(true)
   .source('./src')
   .destination('./build')
 
