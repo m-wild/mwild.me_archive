@@ -11,9 +11,13 @@ $color-gray4: #828282;
 $color-gray3: #dddddd;
 $color-gray2: #e6e6e6;
 $color-gray1: #fbfbfb;
-$color-blue: #0044ff;
-$color-purple: #8000bb;
+$color-blue: #7f7ffc;
+$color-pink: #fc7fbe;
+$color-purple: #be7ffc;
 $color-darkblue: #00247e;
+$color-yellow: #fcfc7f;
+$color-green: #befc7f;
+$color-orange: #fcdd7f;
 
 // --- dimensions
 $dim-max-width: 800px;
@@ -32,6 +36,7 @@ header {
     font-weight: bold;
     a {
       color: $color-black;
+      text-decoration: none;
       &:hover {
         text-decoration: none;
       }
@@ -46,6 +51,68 @@ header {
   }
 }
 
+// --- home page
+.homepage {
+  background-color: $color-yellow;
+  h1 {
+    font-size: 10em;
+    line-height: 0.65em;
+  }
+
+  ul {
+    list-style-type: none;
+    font-size: 1.5em;
+    li {
+      padding-bottom: 10px;
+    }
+  }
+
+  a {
+    color: $color-gray6;
+    font-weight: bold;
+    text-decoration: underline;
+    &:visited {
+      color: $color-gray6;
+    }
+    &:hover {
+      color: $color-pink;
+    }
+  }
+}
+
+
+
+// --- about page
+.aboutpage {
+  background-color: $color-green;
+  main {
+    h1 {
+      font-size: 5em;
+      margin: 0;
+    }
+
+    ul {
+      font-size: 2em;
+      li {
+        list-style-type: none;
+      }
+    }
+
+  }
+
+  a {
+    color: $color-gray6;
+    font-weight: bold;
+    text-decoration: underline;
+    &:visited {
+      color: $color-gray6;
+    }
+    &:hover {
+      color: $color-pink;
+    }
+  }
+}
+
 
 // --- body/main/article
 body {
@@ -54,14 +121,12 @@ body {
   max-width: $dim-max-width;
   font-family: $font-sans;
   font-size: 1.1em;
-  line-height: 110%;
   color: $color-gray6;
 }
 
 a { 
   color: $color-blue;
   text-decoration: none;
-  transition: color .3s ease-in-out;
   &:visited {
     color: $color-purple;
   }
@@ -81,8 +146,8 @@ article a > img:hover {
 }
 
 ::selection {
-  background: $color-gray6;
-  color: $color-gray2;
+  background: $color-yellow;
+  color: $color-gray6;
 }
 
 // --- tables
@@ -102,9 +167,9 @@ blockquote {
 ul {
   list-style-type: square;
 
-  &.post-list {
+  &.contents {
     li {
-      padding-bottom: 3px;
+      padding-bottom: 9px;
     }
     a {
       font-size: 1.2em;

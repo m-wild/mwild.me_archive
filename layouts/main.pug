@@ -1,37 +1,13 @@
 doctype html
 html
-  head
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-
-    title= (title ? title + ' - ' : '') + site.title
-    
-    link(rel='stylesheet' href='/css/main.css')
+  include partials/head.pug
 
   body
-    header
-      nav.left
-        a(href='/')
-          pre.
-             __    __     __     __     __     __         _____
-            /\ "-./  \   /\ \  _ \ \   /\ \   /\ \       /\  __-.
-            \ \ \-./\ \  \ \ \/ ".\ \  \ \ \  \ \ \____  \ \ \/\ \
-             \ \_\ \ \_\  \ \__/".~\_\  \ \_\  \ \_____\  \ \____-
-              \/_/  \/_/   \/_/   \/_/   \/_/   \/_____/   \/____/
-      nav.right
-        a(href='/blog') posts
-        a(href='/about') about
-        a(href='//massesnz.com') music
-        a(href='//github.com/tehmantra') code
-
+    include partials/nav.pug
 
     main
       block content
         != contents
-
-
-    footer
-      p &nbsp;
 
     //- for highlight.js
     link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/xcode.min.css')

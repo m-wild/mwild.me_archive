@@ -2,10 +2,10 @@ extends ./main.pug
 
 block content
 
-  ul.post-list
+  ul.contents
     each post in posts
       
       li.
-        #[a(href= '/' + post.path)= post.title]
+        #[a(href= '/' + post.path + '/')= post.title]
         &nbsp;&mdash; #[=(post.date ? post.date.toLocaleString('en-NZ', {year: 'numeric', month: 'short', day: 'numeric'}) : '')]
 

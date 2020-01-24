@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./build",
     "build": "node index.js",
-    "serve": "npm run build && light-server --port 3000 --serve ./build --watchexp \"./src/** # npm run build # reload\"",
+    "serve": "npm run build && light-server --port 3000 --serve ./build --watchexp \"src/**,layouts/** # npm run build # reload\"",
     "deploy": "npm run build && gh-pages --dist ./build --branch master --repo https://github.com/tehmantra/tehmantra.github.io.git --no-history"
   },
   "dependencies": {

@@ -1,40 +1,20 @@
-extends main.pug
+doctype html
+html
+    include partials/head.pug
 
-block content
+    body.homepage
 
-  pre(style='overflow: hidden;').
-    login as: root
-    Authenticating with public key #[span#publicKey]
-    Last login: #[span#lastLogin] from #[span#ipAddr]
-    Welcome to Ubuntu 16.10 (GNU/Linux 4.8.0-30-generic x86_64)
+    h1 THIS IS THE WEBSITE OF MICHAEL WILDMAN
+
+    ul
+        li
+            a(href="blog/") BLOG
+        li
+            a(href="about/") ABOUT
 
 
-  pre Contents:
-    br
-    a(href='blog/') * Blog: blog/
-    br
-    a(href='about/') * About Me: about/
-    br
-   
-
-  pre Recent posts:
-    br
-    each post in posts.slice(0,3)
-      a(href=post.path)= '* ' + post.title + ' <' + post.excerpt + '>'
-      br
-
-  script.
-    // for the fake login message
-    function rand(min, max) { 
-      return Math.floor(Math.random() * (max - min)) + min; 
-    }
-    var lastLogin = new Date(Date.now() - (rand(1000000000,10000000000)));
-    document.getElementById('lastLogin').textContent = lastLogin;
-
-    var ipAddr = `${rand(10,255)}.${rand(10,255)}.${rand(1,255)}.${rand(1,255)}`;
-    document.getElementById('ipAddr').textContent = ipAddr;
-
-    var publicKey = '"ssh-rsa-' + rand(1000,10000) + '"';
-    document.getElementById('publicKey').textContent = publicKey;
-
-      
+    //- pre Recent posts:
+    //-   br
+    //-   each post in posts.slice(0,3)
+    //-     a(href=post.path)= '* ' + post.title + ' <' + post.excerpt + '>'
+    //-     br
