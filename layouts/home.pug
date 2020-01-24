@@ -8,26 +8,23 @@ block content
     Last login: #[span#lastLogin] from #[span#ipAddr]
     Welcome to Ubuntu 16.10 (GNU/Linux 4.8.0-30-generic x86_64)
 
-  -
-    var contents = {
-      'blog/': 'Blog',
-      'about/': 'About Me',
-      'webgl-tutorials/': 'WebGL Tutorials'
-    };
 
   pre Contents:
     br
-    each text, link in contents
-      a(href=link)= '* '+ text + ': ' + link
-      br
+    a(href='blog/') * Blog: blog/
+    br
+    a(href='about/') * About Me: about/
+    br
+   
 
-  pre Recient posts:
+  pre Recent posts:
     br
     each post in posts.slice(0,3)
       a(href=post.path)= '* ' + post.title + ' <' + post.excerpt + '>'
       br
 
   script.
+    // for the fake login message
     function rand(min, max) { 
       return Math.floor(Math.random() * (max - min)) + min; 
     }
@@ -40,5 +37,4 @@ block content
     var publicKey = '"ssh-rsa-' + rand(1000,10000) + '"';
     document.getElementById('publicKey').textContent = publicKey;
 
-    var contents = !{JSON.stringify(contents)};
       
